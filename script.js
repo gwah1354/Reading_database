@@ -6,7 +6,7 @@ const supa_base = supabase.createClient(supabaseUrl, supabaseKey)
 
 async function loadMessages() {
 
-  const { data, error } = await supa_base.from("messages").select("*")
+  const { data, error } = await supa_base.from("messages").select("*").order("id", {ascending : false})
 
   const container = document.getElementById("messages")
 
