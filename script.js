@@ -6,7 +6,7 @@ const supa_base = supabase.createClient(supabaseUrl, supabaseKey)
 
 async function loadMessages() {
 
-  const { data, error } = await supa_base.from("contacts").select("*")
+  const { data, error } = await supa_base.from("messages").select("*")
 
   const container = document.getElementById("messages")
 
@@ -14,7 +14,7 @@ async function loadMessages() {
 
     const p = document.createElement("p")
 
-    p.textContent = row.name + ": " + row.message
+    p.textContent = row.name + ": " + row.message 
 
     container.appendChild(p)
 
